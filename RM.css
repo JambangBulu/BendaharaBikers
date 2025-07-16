@@ -1,0 +1,262 @@
+@charset "utf-8";
+/* CSS Document */
+/* Reset & base */
+
+.back-btn {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  font-size: 1.7rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity .25s;
+  z-index: 2;
+}
+.back-btn:hover { opacity: .7; }
+
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  /* Container and general layout */
+  .container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 2rem auto 4rem auto;
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aef3b56d-9ba0-4878-895e-3cca0885f417.png') center center/cover no-repeat;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.25em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+  }
+  .hero-content p {
+    font-style: italic;
+    font-size: 1.25rem;
+    color: #d5d5d5;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  }
+
+  /* Section Titles */
+  h2.section-title {
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 4rem 0 1rem 0;
+    color: #f0f0f0;
+    border-bottom: 2px solid #666;
+    padding-bottom: 0.3rem;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* My Rides gallery */
+  .rides-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .ride-card {
+    background: #292929;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    transition: transform 0.25s ease;
+    cursor: default;
+  }
+  .ride-card:hover {
+    transform: scale(1.05);
+  }
+  .ride-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+  }
+  .ride-info {
+    padding: 0.8rem 0.9rem 1.1rem 0.9rem;
+    color: #eaeaea;
+    text-align: center;
+  }
+  .ride-info .model {
+    font-weight: 900;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  .ride-info .desc {
+    font-size: 0.9rem;
+    color: #c7a256;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Ride Diaries Section */
+  .ride-diaries {
+    margin-top: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ride-diary {
+    display: flex;
+    flex-wrap: wrap;
+    background: #2a2a2a;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.7);
+    min-height: 180px;
+  }
+  .diary-image {
+    flex: 1 1 280px;
+    min-width: 280px;
+    max-width: 280px;
+    overflow: hidden;
+    position: relative;
+    background-color: #111;
+  }
+  .diary-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .diary-content {
+    flex: 2 1 400px;
+    padding: 1.4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ddd;
+    background: linear-gradient(90deg, #222 10%, #1a1a1a 95%);
+  }
+  .diary-content h3 {
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.04em;
+  }
+  .diary-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.02em;
+  }
+  .diary-content p span.label {
+    display: inline-block;
+    font-weight: 700;
+    color: #c7a256;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-right: 0.4rem;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 720px) {
+    .ride-diary {
+      flex-direction: column;
+      min-height: auto;
+    }
+    .diary-image, .diary-content {
+      max-width: 100%;
+      flex: unset;
+    }
+    .diary-content {
+      padding: 1.2rem 1rem;
+    }
+    .rides-gallery {
+      grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+      gap: 0.85rem; 
+    }
+    .ride-card img {
+      height: 110px;
+    }
+  }
+
+  /* Color accent for ride diaries title */
+  .ride-diaries-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #c87e1d;
+    letter-spacing: 0.14em;
+    margin-bottom: 1.6rem;
+    text-transform: uppercase;
+  }
+
+.nav-links {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a::after {                    /* underline hover effect */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.flag img {
+  width: 42px;
+  height: auto;
+}
+

@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ===== RESET & BASE ===== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #2b2a2a;       /* same charcoal tone as earlier template */
+  color: #eaeaea;
+  font-family: "Libre Baskerville", serif;
+  line-height: 1.55;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  font-size: 1.7rem;
+  color: #eaeaea;
+  text-decoration: none;
+  transition: opacity .25s;
+  z-index: 2;
+}
+.back-btn:hover { opacity: .7; }
+
+/* ===== MAIN WRAPPER ===== */
+.wrapper {
+  max-width: 680px;
+  margin: 60px auto 40px;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+/* ===== TITLE BANNER ===== */
+.banner {
+  display: inline-block;
+  margin: 0 0 30px;
+  padding: 10px 28px;
+  background: #eaeaea;
+  color: #000;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: .5px;
+}
+
+/* ===== PHOTO FRAME ===== */
+.photo-frame {
+  width: 280px;
+  margin: 0 auto 34px;
+  padding: 8px;
+  background: #eaeaea;       /* white frame */
+}
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  filter: grayscale(100%);   /* make the photo B&W like screenshot */
+}
+
+/* ===== NAME & SUBTITLE ===== */
+.name {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+.subtitle {
+  margin: 0 0 26px;
+  font-size: .95rem;
+  font-style: italic;
+  letter-spacing: .3px;
+}
+
+/* ===== TRIBUTE TEXT ===== */
+.tribute {
+  margin: 0 auto 38px;
+  max-width: 50ch;
+  font-size: .95rem;
+  text-align: justify;       /* mimics the screenshot alignment */
+}
+
+/* ===== CLOSING LINE ===== */
+.closing {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .4px;
+}
+
+/* ===== SMALL SCREEN TWEAK ===== */
+@media (max-width: 420px) {
+  .photo-frame { width: 230px; }
+  .photo-frame img { height: 280px; }
+}
+
+.navbar{
+  position:relative;            /* keeps nav above banner */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 40px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Center nav links with invisible flex spacer technique */
+.nav-links {
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, "serif";
+  display: flex;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a::after {                    /* underline hover effect */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.flag img {
+  width: 42px;
+  height: auto;
+}
+
+
+

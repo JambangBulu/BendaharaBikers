@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ――― RESET ――― */
+*,*::before,*::after{box-sizing:border-box;}
+body{margin:0;font-family:"Poppins",sans-serif;background:#222;color:#000;}
+
+/* ――― HERO ――― */
+.hero{
+  position:relative;
+  height:100vh;                 /* fills first screen */
+  overflow:hidden;
+}
+
+/* Banner image stretches & crops perfectly, *behind* navbar */
+.banner-img{
+  position:absolute;
+  inset:0;                      /* top:0; right:0; bottom:0; left:0 */
+  width:100%;
+  height:100%;
+  object-fit:cover;             /* centre‑crop */
+  z-index:-1;                   /* pushes it behind nav */
+}
+
+/* ――― NAVBAR ――― */
+.navbar{
+  position:relative;            /* keeps nav above banner */
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:18px 40px;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Center nav links with invisible flex spacer technique */
+.nav-links {
+  display: flex;
+  gap: 60px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  position: relative;
+}
+.nav-links a::after {                    /* underline hover effect */
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.flag img {
+  width: 42px;
+  height: auto;
+}
+
+/* ===========  INFO‑BAR  =========== */
+.info-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 28px;            /* distance from viewport bottom */
+  transform: translateX(-50%);
+  display: flex;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25);
+  overflow: hidden;
+}
+
+/* Each tile */
+.info-tile {
+  --pad: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--pad) calc(var(--pad) + 4px);
+  gap: 6px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  min-width: 180px;
+  transition: background .25s;
+}
+.info-tile:hover { background: #f3f3f3; }
+
+.info-tile img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.info-tile h3 {
+  margin: 0;
+  font-size: .9rem;
+  font-weight: 700;
+}
+.info-tile p {
+  margin: 0;
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+/* vertical divider between tiles */
+.info-tile + .info-tile {
+  border-left: 2px solid #e4e4e4;
+}
+
+/* ===========  RESPONSIVE  =========== */
+@media (max-width: 820px) {
+  .nav-links { gap: 34px; }
+}
+@media (max-width: 640px) {
+  .nav-links { display: none; }      /* hide links, keep logo + flag */
+  .info-tile { --pad: 22px; min-width: 155px; }
+}
+@media (max-width: 450px) {
+  .info-bar { flex-direction: column; }
+  .info-tile + .info-tile { border-left: none; border-top: 2px solid #e4e4e4; }
+}
+
+

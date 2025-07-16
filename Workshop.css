@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.back-btn {
+  position: fixed;
+  top: 14px;
+  left: 18px;
+  font-size: 1.7rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: opacity .25s;
+  z-index: 2;
+}
+.back-btn:hover { opacity: .7; }
+
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.header {
+  position: relative;
+  height: 250px;
+  background: url("../../Pictures/Screenshots/Screenshot 2025-06-29 001645.png") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Blur overlay */
+.blur-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);  /* Apply blur effect */
+  background-color: rgba(0, 0, 0, 0.4);  /* Slight dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blur-overlay h1 {
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+  color: #fff;
+  font-size: 36px;
+  text-align: center;
+  z-index: 1;
+  font-weight: bold;
+}
+
+.contact-section {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-info h2 {
+	font-family:Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.contact-info h2 span {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+  color: #f9a7b0;
+}
+
+.contact-info p {
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #000;
+  font-size: 18px;
+}
+
+.contact-form {
+  flex: 2;
+  min-width: 300px;
+}
+
+.contact-form h3 {
+	font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+}
+
+button {
+  background-color: #333;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 200px;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.map-section {
+  margin-top: 40px;
+}@charset "utf-8";
+/* CSS Document */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+header {
+    background: url('your-background-image-url') no-repeat center center/cover;
+    color: black;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+.contact-info {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.contact-form {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    margin-top: 1rem;
+    display: block;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #5cb85c;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact-form button:hover {
+    background: #4cae4c;
+}
+
+.map {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.map iframe {
+    border: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.background-image {
+    position: relative;
+    background-image: url('../../Pictures/Screenshots/Screenshot 2025-06-29 001645.png'); /* Replace with your image URL */
+    background-size: cover;
+    height: 80vh; /* Adjust height as necessary */
+    filter: blur(2px); /* Adjust blur intensity */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Text color */
+    font-size: 5rem; /* Adjust size as necessary */
+    text-align: center;
+    z-index: 1; /* Ensure text stays above the blurred background */
+}
+
+h1 {
+	padding-bottom: 40px;
+}
+
